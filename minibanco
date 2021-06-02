@@ -1,0 +1,97 @@
+package metodosverano;
+import java.util.Scanner;
+public class minibanco {
+static Scanner sc=new Scanner (System.in);
+static int  saldoactual;
+
+
+	public static int saldoInicial() {
+		//Muestra el saldo inicial de la cuenta 
+		System.out.println("Introduce cantidad inicial de cuenta");
+		saldoactual=sc.nextInt();
+		if(saldoactual<0) {
+			System.out.println("No puede haber un saldo negativo en la cuenta");
+		}
+		return saldoactual;
+	}
+	public static void ingresarDinero(int dinero) {
+		if (dinero<0) {
+			System.out.println("El dinero no se puede ingresar porque es inferior a 0");
+		}
+		saldoactual=saldoactual+dinero;
+		System.out.println("El saldo de su cuenta es= "+saldoactual);
+		
+	}
+	public static void retirarDinero(int dinero2) {
+		if(dinero2>saldoactual) {
+			System.out.println("El dinero no se puede retirar porque no dispone de ese saldo");
+		}
+		saldoactual=saldoactual-dinero2;
+		System.out.println("El saldo de su cuenta es= "+saldoactual);
+	}
+	public static void mostrarSaldo(int saldoactual) {
+		System.out.println("El saldo de su cuenta es= "+saldoactual+" €");
+	}
+	public static void main(String[] args) {
+		// mini banco que muestra menú de dinero inicial,ingreso, retirada de dinero, mostrar saldo y terminar
+		
+		System.out.println ("BIENVENIDO AL BANCO DE PSEINT");
+		System.out.println("*******************************");
+		System.out.println ("¿Qué servicio quiere realizar?");
+		System.out.println("1.Saldo inicial de su cuenta");
+		System.out.println("2.Ingresar dinero en su cuenta");
+		System.out.println("3.Retirar dinero de su cuenta");
+		System.out.println("4.Mostrar saldo");
+		System.out.println("5.Terminar");
+		int contador=0;
+		do {
+		System.out.println ("Elija una de las opciones por favor");
+		int opcion=sc.nextInt();
+		int solicitud=3;
+		System.out.println("Procesando su solicitud, espere un momento por favor...");
+		for(int i=0;i<=solicitud;i++) {
+			System.out.println("...");
+		}
+		System.out.println("Solicitud aceptada, estamos tramitándolo, por favor no se retire...");
+		for(int i=0;i<=solicitud;i++) {
+			System.out.println("...");
+		}
+		switch(opcion) {
+		case 1:
+			System.out.println("Ha seleccionado la opción mostrar saldo");
+			System.out.println("Su saldo inicial es= "+minibanco.saldoInicial()+" €");
+			contador++;
+			break;
+		case 2:
+			System.out.println("Ha seleccionado la opción ingresar dinero en la cuenta");
+			System.out.println("Seleccione la cantidad a ingresar");
+			int dinero=sc.nextInt();
+			minibanco.ingresarDinero(dinero);
+			contador++;
+			break;
+		case 3:
+			System.out.println("Ha seleccionado la opción retirar dinero de la cuenta");
+			System.out.println("Seleccione la cantidad a retirar");
+			int dinero2=sc.nextInt();
+			minibanco.retirarDinero(dinero2);
+			contador++;
+			break;
+		case 4:
+			System.out.println("Ha seleccionado la opción mostrar saldo");
+			minibanco.mostrarSaldo(saldoactual);
+			contador++;
+			break;
+		case 5:
+			System.out.println("Ha seleccionado la opción terminar");
+			System.out.println("Hasta otra señor, esperamos que pase un buen día");
+			contador++;
+			break;
+		default:
+			System.out.println("Opción no válida, seleccione otra opción válida por favor");
+			contador++;
+		}
+	}
+		while(contador!=6);
+
+}
+}
