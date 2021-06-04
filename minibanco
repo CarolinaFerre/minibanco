@@ -18,7 +18,7 @@ static int  saldoactual;
 		if (dinero<0) {
 			System.out.println("El dinero no se puede ingresar porque es inferior a 0");
 		}
-		saldoactual=saldoactual+dinero;
+		saldoactual+=dinero;
 		System.out.println("El saldo de su cuenta es= "+saldoactual);
 		
 	}
@@ -26,7 +26,7 @@ static int  saldoactual;
 		if(dinero2>saldoactual) {
 			System.out.println("El dinero no se puede retirar porque no dispone de ese saldo");
 		}
-		saldoactual=saldoactual-dinero2;
+		saldoactual-=dinero2;
 		System.out.println("El saldo de su cuenta es= "+saldoactual);
 	}
 	public static void mostrarSaldo(int saldoactual) {
