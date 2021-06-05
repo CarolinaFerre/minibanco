@@ -36,7 +36,7 @@ static int  saldoactual;
 		// mini banco que muestra menú de dinero inicial,ingreso, retirada de dinero, mostrar saldo y terminar
 		
 		System.out.println ("BIENVENIDO AL BANCO DE PSEINT");
-		System.out.println("*******************************");
+		System.out.println("********************************");
 		System.out.println ("¿Qué servicio quiere realizar?");
 		System.out.println("1.Saldo inicial de su cuenta");
 		System.out.println("2.Ingresar dinero en su cuenta");
